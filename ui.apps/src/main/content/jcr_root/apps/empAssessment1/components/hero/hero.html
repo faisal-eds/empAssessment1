@@ -1,0 +1,15 @@
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html">
+  <sly data-sly-call="${clientLib.css @ categories='empAssessment1.site'}" />
+</sly>
+
+<div class="hero-component">
+  <div class="hero-image-container">
+      <img class="hero-image" src="${properties.fileReference}" alt="Image Description" />
+  </div>
+  <div class="hero-content">
+      <h1 class="hero-title">${properties.title}</h1>
+      <p class="hero-description">${properties.description @ context='html'}</p>
+      <span class="hero-label">${properties.label}</span>
+      <a class="hero-link" href="${properties.url}" target="_blank">Learn More</a>
+  </div>
+</div>
