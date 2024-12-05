@@ -1,0 +1,82 @@
+
+$font-family: "Arial, sans-serif";
+$border-color: #ddd;
+$text-color: #666;
+$link-color: #333;
+$header-color: #555;
+
+
+@mixin flex-center($align: center, $justify: center) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin text-style($size, $color) {
+  font-size: $size;
+  color: $color;
+}
+
+body {
+  font-family: $font-family;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-container {
+    background-color: #fff;
+  @include flex-center();
+  padding: 20px 40px;
+  border-top: 1px solid $border-color;
+
+  .footer-left-block {
+    .logo-section {
+      @include flex-center();
+      gap: 10px;
+
+      .logo-image {
+        width: 50px;
+      }
+    }
+
+    .footer-description-block {
+      margin-top: 250px;
+
+      .footer-description {
+        @include text-style(12px, $text-color);
+        flex: 1;
+        text-align: center;
+        margin-top: -200px;
+      }
+    }
+  }
+
+  .footer-right-block {
+    margin-left: 70px;
+
+    h2 {
+      @include text-style(16px, $header-color);
+      margin-bottom: 10px;
+    }
+
+    .quick-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin-bottom: 5px;
+
+        a {
+          @include text-style(14px, $link-color);
+          text-decoration: none;
+
+          span {
+            @include text-style(12px, $text-color);
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+  }
+}

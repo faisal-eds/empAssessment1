@@ -3,13 +3,20 @@
 </sly>
 
 <div class="hero-component">
-  <div class="hero-image-container">
-      <img class="hero-image" src="${properties.fileReference}" alt="Image Description" />
-  </div>
-  <div class="hero-content">
+  <div class="hero-container">
+    <div class="hero-text-content">
       <h1 class="hero-title">${properties.title}</h1>
       <p class="hero-description">${properties.description @ context='html'}</p>
-      <span class="hero-label">${properties.label}</span>
-      <a class="hero-link" href="${properties.url}" target="_blank">Learn More</a>
+      <a class="hero-button" href="${properties.url}" target="_blank"
+        >Learn More</a
+      >
+    </div>
+
+    <div class="hero-image-container">
+      <img
+        class="hero-image"
+        src="${properties.fileReference}"
+        alt="Image Description" />
+    </div>
   </div>
 </div>
